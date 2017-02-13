@@ -1,4 +1,4 @@
-function omf.destroy -d "Remove Oh My Fish"
+function omf.core.destroy -d "Remove Oh My Fish"
   # Run the uninstaller
   fish "$OMF_PATH/bin/install" --uninstall "--path=$OMF_PATH" "--config=$OMF_CONFIG"
 

@@ -1,4 +1,4 @@
-function omf.cli.update
+function omf.update
   set -l update_core
   set -l packages $argv
   if test (count $packages) -gt 0
@@ -14,8 +14,8 @@ function omf.cli.update
   if set -q update_core
     omf.core.update
 
-    if type -q omf.version
-      set OMF_VERSION (omf.version)
+    if type -q omf.core.version
+      set OMF_VERSION (omf.core.version)
     end
 
     if test $status -ne 1
@@ -36,6 +36,6 @@ function omf.cli.update
 
   # Opt-in flag for testing
   if set -q OMF_AUTO_RELOAD
-    omf.cli.reload
+    omf.reload
   end
 end

@@ -1,4 +1,4 @@
-function omf.cli.remove -a name
+function omf.remove -a name
   switch (count $argv)
   case 1
     omf.packages.remove $name
@@ -9,7 +9,7 @@ function omf.cli.remove -a name
       echo (omf::em)"$name successfully removed."(omf::off)
       # Opt-in flag for testing
       set -q OMF_AUTO_RELOAD
-        and omf.cli.reload
+        and omf.reload
     case 1
       echo (omf::err)"$name could not be removed."(omf::off) >&2
     case 2

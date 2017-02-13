@@ -1,4 +1,4 @@
-function omf.reload -d "Reload fish process via exec, keeping some context"
+function omf.core.reload -d "Reload fish process via exec, keeping some context"
   set -q CI; and return 0
 
   history --save

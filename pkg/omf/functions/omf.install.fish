@@ -1,4 +1,4 @@
-function omf.cli.install
+function omf.install
   set fail_count 0
 
   omf.index.update

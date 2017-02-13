@@ -1,4 +1,4 @@
-function __omf.doctor.theme
+function __omf.core.doctor.theme
   if not omf.check.fish_prompt
     echo (omf::err)"Warning: "(omf::off)(omf::em)"fish_prompt.fish"(omf::off)" is overridden."
     echo (omf::em)"  fish_config"(omf::off)" command persists the prompt to "(omf::em)"~/.config/fish/functions/fish_prompt.fish"(omf::off)
@@ -12,7 +12,7 @@ function __omf.doctor.theme
   return 0
 end
 
-function __omf.doctor.fish_version
+function __omf.core.doctor.fish_version
   set -l min_version 2.2.0
   set -l current_version
   begin
@@ -29,7 +29,7 @@ function __omf.doctor.fish_version
   end
 end
 
-function __omf.doctor.git_version
+function __omf.core.doctor.git_version
   set -l min_version 1.9.5
   set -l current_version
   begin
@@ -45,16 +45,16 @@ function __omf.doctor.git_version
   end
 end
 
-function omf.doctor
-  echo "Oh My Fish version:   "(omf.version)
+function omf.core.doctor
+  echo "Oh My Fish version:   "(omf.core.version)
   echo "OS type:              "(uname)
   echo "Fish version:         "(fish --version)
   echo "Git version:          "(git --version)
   echo "Git core.autocrlf:    "(git config core.autocrlf; or echo no)
 
-  __omf.doctor.fish_version; or set -l doctor_failed
-  __omf.doctor.git_version; or set -l doctor_failed
-  __omf.doctor.theme; or set -l doctor_failed
+  __omf.core.doctor.fish_version; or set -l doctor_failed
+  __omf.core.doctor.git_version; or set -l doctor_failed
+  __omf.core.doctor.theme; or set -l doctor_failed
 
   if set -q doctor_failed
     echo "If everything you use Oh My Fish for is working fine, please don't worry and just ignore the warnings. Thanks!"

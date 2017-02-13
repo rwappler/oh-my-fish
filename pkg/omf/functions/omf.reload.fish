@@ -1,14 +1,14 @@
-function omf.cli.reload
+function omf.reload
   if not contains -- --force $argv
     if count (jobs) >/dev/null ^&1
-      __omf.cli.reload.job_warning
+      __omf.reload.job_warning
       return 1
     end
   end
-  omf.reload
+  omf.core.reload
 end
 
-function __omf.cli.reload.job_warning
+function __omf.reload.job_warning
   echo (set_color -u)"Reload aborted. There are background jobs:"(set_color normal)
   echo
   jobs

@@ -1,4 +1,4 @@
-function omf.cli.channel
+function omf.channel
   switch (count $argv)
     case 0
       omf.channel.get

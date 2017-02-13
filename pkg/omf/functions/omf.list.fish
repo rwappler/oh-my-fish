@@ -1,4 +1,4 @@
-function omf.cli.list
+function omf.list
   switch (count $argv)
   case 0
     echo (set_color -u)Plugins(set_color normal)

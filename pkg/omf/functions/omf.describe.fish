@@ -1,4 +1,4 @@
-function omf.cli.describe -a package -d 'Show information about a package'
+function omf.describe -a package -d 'Show information about a package'
   if set -l props (omf.index.stat $package description repository maintainer)
     echo "Package: $package"
     echo "Description: $props[1]"

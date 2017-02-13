@@ -1,0 +1,16 @@
+List installed packages.
+
+== Usage
+  omf list [options]
+
+== Description
+
+== Options
+-p, --plugin::
+    Only list plugins.
+
+-t, --theme::
+    Only list themes.
+
+== Aliases
+*omf ls*
